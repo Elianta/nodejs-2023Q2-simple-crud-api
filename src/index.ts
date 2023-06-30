@@ -4,6 +4,7 @@ import {
     GetRequestHandler,
     PostRequestHandler,
     PutRequestHandler,
+    DeleteRequestHandler,
 } from "./requestHandlers/index.js";
 import { DataBase } from "./db.js";
 
@@ -24,6 +25,7 @@ const server = http.createServer((req, res) => {
                 new PutRequestHandler(db).listener(req, res);
                 break;
             case "DELETE":
+                new DeleteRequestHandler(db).listener(req, res);
                 break;
             default:
                 res.writeHead(400, { "Content-Type": "application/json" });

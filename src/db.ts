@@ -56,4 +56,14 @@ export class DataBase {
             return null;
         }
     }
+
+    deleteUserById(id: string): boolean {
+        const user = this._users.find((user) => user.id === id);
+        if (user) {
+            this._users = this._users.filter((user) => user.id !== id);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
