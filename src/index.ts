@@ -1,13 +1,17 @@
 import http from "http";
 import errorMessages from "./errorMessages.js";
+import { GetRequestHandler } from "./requestHandlers/index.js";
+import { DataBase } from "./db.js";
 
 //TODO: get port from .env
 const PORT = process.env.PORT || 4000;
+const db = new DataBase([]);
 
 const server = http.createServer((req, res) => {
     try {
         switch (req.method) {
             case "GET":
+                new GetRequestHandler(db).listener(req, res);
                 break;
             case "POST":
                 break;
