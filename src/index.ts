@@ -3,6 +3,7 @@ import errorMessages from "./errorMessages.js";
 import {
     GetRequestHandler,
     PostRequestHandler,
+    PutRequestHandler,
 } from "./requestHandlers/index.js";
 import { DataBase } from "./db.js";
 
@@ -20,6 +21,7 @@ const server = http.createServer((req, res) => {
                 new PostRequestHandler(db).listener(req, res);
                 break;
             case "PUT":
+                new PutRequestHandler(db).listener(req, res);
                 break;
             case "DELETE":
                 break;

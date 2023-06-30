@@ -35,4 +35,25 @@ export class DataBase {
         this._users.push(newUser);
         return newUser;
     }
+
+    updateUserById(id: string, data: Partial<IUser>): IUser | null {
+        const user = this._users.find((user) => user.id === id);
+        if (user) {
+            if (data.username && typeof data.username === "string") {
+                user.username = data.username;
+            }
+            if (typeof data.age === "number") {
+                user.age = data.age;
+            }
+            if (
+                Array.isArray(data.hobbies) &&
+                data.hobbies.every((el) => typeof el === "string")
+            ) {
+                user.hobbies = data.hobbies;
+            }
+            return user;
+        } else {
+            return null;
+        }
+    }
 }
