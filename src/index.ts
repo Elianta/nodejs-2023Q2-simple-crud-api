@@ -1,3 +1,4 @@
+import "dotenv/config";
 import http from "http";
 import errorMessages from "./errorMessages.js";
 import {
@@ -8,7 +9,6 @@ import {
 } from "./requestHandlers/index.js";
 import { DataBase } from "./db.js";
 
-//TODO: get port from .env
 const PORT = process.env.PORT || 4000;
 const db = new DataBase([]);
 
