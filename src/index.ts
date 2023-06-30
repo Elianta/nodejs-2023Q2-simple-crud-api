@@ -1,6 +1,9 @@
 import http from "http";
 import errorMessages from "./errorMessages.js";
-import { GetRequestHandler } from "./requestHandlers/index.js";
+import {
+    GetRequestHandler,
+    PostRequestHandler,
+} from "./requestHandlers/index.js";
 import { DataBase } from "./db.js";
 
 //TODO: get port from .env
@@ -14,6 +17,7 @@ const server = http.createServer((req, res) => {
                 new GetRequestHandler(db).listener(req, res);
                 break;
             case "POST":
+                new PostRequestHandler(db).listener(req, res);
                 break;
             case "PUT":
                 break;
