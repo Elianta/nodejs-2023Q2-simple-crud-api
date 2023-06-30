@@ -1,0 +1,32 @@
+{
+    "name": "simple-crud-api",
+    "version": "1.0.0",
+    "description": "Task for implemention of simple CRUD API using in-memory database underneath.",
+    "type": "module",
+    "main": "src/index.ts",
+    "scripts": {
+        "start:dev": "nodemon src/index.ts",
+        "start:prod": "tsc && node dist/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Elianta/nodejs-2023Q2-simple-crud-api.git"
+    },
+    "author": "Elianta",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Elianta/nodejs-2023Q2-simple-crud-api/issues"
+    },
+    "homepage": "https://github.com/Elianta/nodejs-2023Q2-simple-crud-api#readme",
+    "devDependencies": {
+        "@types/node": "^20.3.2",
+        "@types/uuid": "^9.0.2",
+        "nodemon": "^2.0.22",
+        "prettier": "^2.8.8",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.1.6"
+    },
+    "dependencies": {
+        "uuid": "^9.0.0"
+    }
+}
