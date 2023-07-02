@@ -12,7 +12,7 @@ import { DataBase } from "./db.js";
 const PORT = process.env.PORT || 4000;
 const db = new DataBase([]);
 
-const server = http.createServer((req, res) => {
+export const server = http.createServer((req, res) => {
     try {
         switch (req.method) {
             case "GET":
