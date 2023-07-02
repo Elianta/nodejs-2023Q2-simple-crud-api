@@ -31,7 +31,12 @@ export class DataBase {
         )
             return null;
 
-        const newUser = { id: uuid(), ...data } as IUser;
+        const newUser = {
+            id: uuid(),
+            username: data.username,
+            age: data.age,
+            hobbies: data.hobbies,
+        } as IUser;
         this._users.push(newUser);
         return newUser;
     }
